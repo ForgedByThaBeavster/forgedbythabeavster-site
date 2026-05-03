@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ForgedByThaBeavster | Free HueForge Files & Custom 3D Prints</title>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#080808;color:white;font-family:Arial,Helvetica,sans-serif}
+header{padding:14px 24px;background:#111;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #2c2c2c;position:sticky;top:0;z-index:10}
+.logo{font-size:22px;font-weight:900;color:#b6c05a;letter-spacing:.5px}
+nav a{color:#ddd;text-decoration:none;margin-left:14px;font-weight:bold;font-size:13px}
+.hero{min-height:440px;background-image:linear-gradient(rgba(0,0,0,.04),rgba(0,0,0,.65)),url("images/image_01.png");background-size:cover;background-position:center;display:flex;align-items:flex-end;padding:30px}
+.hero-box{max-width:700px;background:rgba(0,0,0,.68);border:1px solid rgba(182,192,90,.55);border-radius:16px;padding:22px}
+.hero-box h1{margin:0;font-size:clamp(32px,5.4vw,64px);line-height:.95}
+.hero-box p{color:#ddd;font-size:17px;margin-bottom:0}
+.section{padding:36px 22px;max-width:1360px;margin:auto}
+.section h2{font-size:34px;margin:0 0 10px}
+.section-sub{color:#aaa;max-width:830px;line-height:1.5;font-size:15px}
+.product-group{margin-top:28px}
+.group-title{font-size:24px;margin:0 0 12px;color:#b6c05a;border-bottom:1px solid #303622;padding-bottom:7px}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px;margin-top:0}
+.card{background:#151515;border:1px solid #303030;border-radius:14px;overflow:hidden;box-shadow:0 8px 18px rgba(0,0,0,.30);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}.card:hover{transform:translateY(-3px);border-color:#b6c05a;box-shadow:0 12px 24px rgba(182,192,90,.18)}.card:hover .product-img{transform:scale(1.045)}
+.product-img{width:100%;height:135px;object-fit:contain;display:block;background:radial-gradient(circle at center,#242424 0%,#111 72%);padding:6px;transition:transform .25s ease;transform-origin:center}
+.card-body{padding:8px}
+.tag{display:inline-block;color:#080808;background:#b6c05a;border-radius:999px;padding:3px 7px;font-size:9px;font-weight:900;margin-bottom:6px}
+.card h3{margin:2px 0 4px;font-size:14px;line-height:1.1}
+.card p{color:#ccc;line-height:1.22;font-size:11px;margin:0 0 6px}
+.card-row{display:flex;justify-content:space-between;align-items:center;gap:7px;margin-top:7px}
+.price{color:#fff!important;font-size:13px!important;font-weight:900!important;margin:0!important}
+.btn{display:inline-block;text-align:center;text-decoration:none;border:none;border-radius:9px;padding:11px 14px;background:#b6c05a;color:#000;font-weight:900;cursor:pointer;margin-top:12px}
+.small-btn{padding:7px 11px;margin-top:0;font-size:11px}
+.btn-dark{background:#1e1e1e;color:#fff;border:1px solid #444}
+.commercial{background:linear-gradient(135deg,#140808,#111);border-top:1px solid #3a1515;border-bottom:1px solid #3a1515}
+.commercial-grid,.qr-grid{display:grid;grid-template-columns:minmax(250px,370px) 1fr;gap:26px;align-items:center}
+.badge-img,.qr-img{width:100%;border-radius:20px;border:1px solid #5a1616;box-shadow:0 18px 36px rgba(255,0,0,.12)}
+.qr{background:linear-gradient(135deg,#10120c,#080808);border-top:1px solid #323819;border-bottom:1px solid #323819}
+.qr-img{border-color:#4d5528}
+.button-row{display:flex;flex-wrap:wrap;gap:11px;margin-top:17px}
+.helmet-showcase{margin-top:20px;background:linear-gradient(135deg,rgba(255,255,255,.045),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:14px;box-shadow:0 14px 30px rgba(0,0,0,.28)}
+.helmet-copy{display:flex;justify-content:space-between;gap:12px;align-items:end;margin-bottom:12px;color:#ddd;font-size:13px;line-height:1.35}
+.helmet-copy strong{color:#fff;font-size:15px;text-transform:uppercase;letter-spacing:.5px}
+.helmet-copy span{color:#aaa;text-align:right;max-width:520px}
+.helmet-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.helmet-grid img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px;border:1px solid rgba(182,192,90,.34);box-shadow:0 10px 22px rgba(0,0,0,.35);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;display:block;background:#111}
+.helmet-grid img:hover{transform:scale(1.035);border-color:#b6c05a;box-shadow:0 14px 30px rgba(182,192,90,.20)}
+.note{color:#c9c9c9;font-size:14px;line-height:1.5;background:#101010;border:1px solid #333;border-radius:14px;padding:14px;margin-top:17px}
+.custom{background:#111;border-top:1px solid #333;border-bottom:1px solid #333}
+footer{padding:24px;text-align:center;background:#111;color:#aaa}
+@media(max-width:800px){
+ header{flex-direction:column;gap:10px}
+ nav{text-align:center;line-height:2}
+ nav a{margin:0 7px}
+ .hero{min-height:330px;padding:17px}
+ .commercial-grid,.qr-grid{grid-template-columns:1fr}
+ .helmet-copy{display:block}
+ .helmet-copy span{display:block;text-align:left;margin-top:5px}
+ .helmet-grid{grid-template-columns:1fr;}
+ .product-img{height:128px}
+ .products{grid-template-columns:repeat(auto-fit,minmax(126px,1fr));gap:8px}
+ .card h3{font-size:13px}
+ .card p{font-size:10px}
+ .group-title{font-size:21px}
+}
+
+/* === ForgedByThaBeavster WOW upgrade === */
+:root{--forge:#b6c05a;--forge2:#eef78a;--bg:#080808;--panel:#121212;--line:rgba(182,192,90,.32)}
+body{background:radial-gradient(circle at 20% 0%,rgba(182,192,90,.12),transparent 28%),radial-gradient(circle at 90% 18%,rgba(124,24,24,.18),transparent 26%),#080808;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.65),transparent 75%);z-index:-1}
+header{backdrop-filter:blur(14px);background:rgba(10,10,10,.84);box-shadow:0 10px 30px rgba(0,0,0,.45)}
+.logo{font-size:24px;text-shadow:0 0 22px rgba(182,192,90,.35)}
+nav a{position:relative;transition:color .18s ease}
+nav a:after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:2px;background:var(--forge);transform:scaleX(0);transform-origin:center;transition:transform .18s ease}
+nav a:hover{color:#fff}
+nav a:hover:after{transform:scaleX(1)}
+.hero{min-height:560px;align-items:center;position:relative;overflow:hidden;background-attachment:fixed}
+.hero:after{content:"";position:absolute;inset:auto -10% -35% -10%;height:260px;background:radial-gradient(ellipse at center,rgba(182,192,90,.24),transparent 62%);filter:blur(28px);pointer-events:none}
+.hero-box{position:relative;max-width:820px;border-radius:26px;padding:30px;background:linear-gradient(135deg,rgba(0,0,0,.78),rgba(20,20,20,.62));border:1px solid rgba(238,247,138,.48);box-shadow:0 30px 90px rgba(0,0,0,.65),0 0 60px rgba(182,192,90,.12)}
+.hero-kicker,.eyebrow{display:inline-block;color:#080808;background:linear-gradient(135deg,var(--forge),var(--forge2));border-radius:999px;padding:6px 10px;font-size:11px;font-weight:1000;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
+.hero-box h1{font-size:clamp(38px,6.4vw,82px);letter-spacing:-.05em;text-transform:uppercase;text-shadow:0 12px 32px rgba(0,0,0,.85)}
+.hero-box p{font-size:18px;line-height:1.5;max-width:720px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.btn{transition:transform .18s ease,box-shadow .18s ease,filter .18s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(182,192,90,.18);filter:brightness(1.05)}
+.btn-hero{padding:13px 18px;border-radius:999px}
+.trust-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.trust-row span{font-size:12px;color:#e8e8e8;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.07);border-radius:999px;padding:8px 10px}
+.impact-strip{max-width:1360px;margin:-54px auto 12px;padding:0 22px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;position:relative;z-index:3}
+.impact-card{border:1px solid var(--line);background:linear-gradient(145deg,rgba(25,25,25,.94),rgba(11,11,11,.94));border-radius:22px;padding:18px;box-shadow:0 18px 44px rgba(0,0,0,.45)}
+.impact-card strong{display:block;font-size:19px;color:#fff;margin-bottom:5px}
+.impact-card span{color:#bbb;font-size:13px;line-height:1.45}
+.section{padding-top:48px;padding-bottom:48px}
+.section-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:18px}
+.section h2{font-size:clamp(30px,4vw,48px);letter-spacing:-.035em}
+.featured-section{padding-top:54px}
+.featured-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.featured-grid .card{border-color:rgba(238,247,138,.38);box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.featured-grid .product-img{height:230px}
+.creator-story{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}
+.story-panel{border:1px solid rgba(255,255,255,.12);border-radius:26px;background:linear-gradient(135deg,rgba(21,21,21,.96),rgba(10,10,10,.96));padding:26px;box-shadow:0 20px 50px rgba(0,0,0,.36)}
+.story-panel h2{margin:0 0 10px}
+.story-panel p{color:#c8c8c8;line-height:1.55;margin:0}
+.accent-panel{border-color:rgba(182,192,90,.42);background:linear-gradient(135deg,rgba(182,192,90,.16),rgba(12,12,12,.95))}
+.products{grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px}
+.card{position:relative;border-radius:20px;background:linear-gradient(180deg,#181818,#0f0f0f);border:1px solid rgba(255,255,255,.10);box-shadow:0 16px 36px rgba(0,0,0,.42);isolation:isolate}
+.card:before{content:"";position:absolute;inset:0;border-radius:20px;background:linear-gradient(135deg,rgba(238,247,138,.18),transparent 34%,rgba(255,255,255,.04));opacity:0;transition:opacity .2s ease;pointer-events:none;z-index:1}
+.card:hover{transform:translateY(-7px);border-color:rgba(238,247,138,.72);box-shadow:0 24px 55px rgba(0,0,0,.55),0 0 34px rgba(182,192,90,.17)}
+.card:hover:before{opacity:1}
+.product-img{height:auto;aspect-ratio:1/1;object-fit:contain;padding:3px;background:radial-gradient(circle at center,#2a2a2a 0%,#0d0d0d 70%)}
+.card-body{padding:12px}
+.card h3{font-size:15px;letter-spacing:-.01em}
+.card p{font-size:12px;line-height:1.35;color:#bdbdbd}
+.card .tag{background:linear-gradient(135deg,var(--forge),var(--forge2));box-shadow:0 0 18px rgba(182,192,90,.22)}
+.card-row{border-top:1px solid rgba(255,255,255,.08);padding-top:10px}
+.small-btn{border-radius:999px}
+.group-title{font-size:26px;border-bottom:1px solid rgba(182,192,90,.24);display:flex;align-items:center;gap:10px}
+.group-title:before{content:"";width:10px;height:10px;background:var(--forge);border-radius:50%;box-shadow:0 0 18px rgba(182,192,90,.9)}
+.float-cta{position:fixed;right:18px;bottom:18px;z-index:20;display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+.float-cta a{margin:0;box-shadow:0 14px 34px rgba(0,0,0,.42)}
+@media(max-width:900px){.impact-strip{grid-template-columns:1fr;margin-top:-28px}.section-head,.creator-story{display:block}.section-head .btn{margin-top:12px}.featured-grid .product-img{height:auto}.float-cta{left:12px;right:12px}.float-cta a{flex:1}.products{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}.hero{min-height:500px;background-attachment:scroll}.hero-box{padding:22px}}
+
+</style>
+<!-- GitHub-ready version: images stored separately in /images to keep index.html under upload limits. -->
+</head>
+<body>
+<header>
+  <div class="logo">ForgedByThaBeavster</div>
+  <nav>
+    <a href="#featured">Featured</a>
+    <a href="#hueforges">HueForge</a>
+    <a href="#makerworld">Free Files</a>
+    <a href="#commercial">Commercial Prints</a>
+    <a href="#custom">Custom</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-box">
+    <span class="hero-kicker">ForgedByThaBeavster • @ThaBeavster</span>
+    <h1>Badass HueForge Art You Can Print Free.</h1>
+    <p>Tank-inspired designs, sports wall art, anime-style pieces, eagles, custom requests, and commercial 3D prints — built for makers who want something that actually stands out.</p>
+    <div class="hero-actions">
+      <a class="btn btn-hero" href="#featured">See Featured Designs</a>
+      <a class="btn btn-dark btn-hero" href="https://makerworld.com/@ThaBeavster?appSharePlatform=copy" target="_blank" rel="noopener">Print Free on MakerWorld</a>
+    </div>
+    <div class="trust-row">
+      <span>Free MakerWorld files</span>
+      <span>Custom HueForge requests</span>
+      <span>Commercial print options</span>
+    </div>
+  </div>
+</section>
+
+<section class="impact-strip" aria-label="Why visitors come back">
+  <div class="impact-card">
+    <strong>Print It Free</strong>
+    <span>Grab compatible files from my MakerWorld profile and print them yourself.</span>
+  </div>
+  <div class="impact-card">
+    <strong>Buy Finished Prints</strong>
+    <span>Want it already printed? Text me the model and I’ll quote the finished piece.</span>
+  </div>
+  <div class="impact-card">
+    <strong>Request Custom Work</strong>
+    <span>Send a photo, team idea, military theme, logo, or gift idea and I’ll help build it.</span>
+  </div>
+</section>
+
+<section id="featured" class="section featured-section">
+  <div class="section-head">
+    <div>
+      <span class="eyebrow">Start Here</span>
+      <h2>Featured Drops</h2>
+      <p class="section-sub">A rotating front-row showcase pulled from the current collection so repeat visitors immediately see the good stuff.</p>
+    </div>
+    <a class="btn btn-dark" href="#hueforges">Browse All Categories</a>
+  </div>
+  <div class="featured-grid" id="featured-grid"></div>
+</section>
+
+<section class="section creator-story">
+  <div class="story-panel">
+    <span class="eyebrow">Built Different</span>
+    <h2>Veteran-built. Maker-focused. Print-ready.</h2>
+    <p>I design pieces with the 3D printing crowd in mind: bold contrast, clean shapes, strong themes, and files that are meant to look good on a wall — not just on a screen.</p>
+  </div>
+  <div class="story-panel accent-panel">
+    <span class="eyebrow">Repeat Visitor Hook</span>
+    <h2>New drops keep the site fresh.</h2>
+    <p>Use this page as the home base for fresh HueForge drops, MakerWorld freebies, custom requests, and commercial print options.</p>
+  </div>
+</section>
+
+<section id="hueforges" class="section">
+  <h2>HueForge Design Collection</h2>
+  <p class="section-sub">Browse by theme, print the files free from MakerWorld, or text me to order finished prints and custom design work.</p>
+  
+    <div class="product-group">
+      <h3 class="group-title">Tank HueForge Designs</h3>
+      <div class="products">
+        
+    <div class="card">
+      <img class="product-img" src="images/image_02.jpg" alt="M1A2 Abrams HueForge">
+      <div class="card-body">
+        <span class="tag">HueForge</span>
+        <h3>M1A2 Abrams HueForge</h3>
+        <p>Black and white tank wall art.</p>
+        <div class="card-row">
+          <p class="price">$30+</p>
+          <a href="sms:2107075600?body=I%20want%20to%20order%3A%20M1A2%20Abrams%20HueForge" class="btn small-btn">Text</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <img class="product-img" src="images/image_03.jpg" alt="1st CAV Abrams HueForge">
+      <div class="card-body">
+        <span class="tag">HueForge</span>
+        <h3>1st CAV Abrams HueForge</h3>
+        <p>Tan Abrams with 1st CAV detail.</p>
+        <div class="card-row">
+          <p class="price">$35+</p>
+          <a href="sms:2107075600?body=I%20want%20to%20order%3A%201st%20CAV%20Abrams%20HueForge" class="btn small-btn">Text</a>
+        </div>
+      </div>
+    </div>
+    
+      </div>
+    </div>
+    
+    <div class="product-group">
+      <h3 class="group-title">Eagle HueForge Designs</h3>
+      <div class="products">
+        
+    <div class="card">
+      <img class="product-img" src="images/image_04.jpg" alt="Patriotic Eagle HueForge">
+      <div class="card-body">
+        <span class="tag">HueForge</span>
+        <h3>Patriotic Eagle HueForge</h3>
+        <p>Bald eagle with American flag.</p>
+        <div class="card-row">
+          <p class="price">$30+</p>
+          <a href="sms:2107075600?body=I%20want%20to%20order%3A%20Patriotic%20Eagle%20HueForge" class="btn small-btn">Text</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <img class="product-img" src="images/image_05.jpg" alt="Tactical Eagle HueForge">
+      <div class="card-body">
+        <span class="tag">HueForge</span>
+        <h3>Tactical Eagle HueForge</h3>
+        <p>Muted tactical patriotic eagle.</p>
+        <div class="card-row">
+          <p class="price">$30+</p>
+          <a href="sms:2107075600?body=I%20want%20to%20order%3A%20Tactical%20Eagle%20HueForge" class="btn small-btn">Text</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <img class="product-img" src="images/image_06.jpg" alt="Blue Patriot Eagle HueForge">
+      <div class="card-body">
+        <span class="tag">HueForge</span>
+        <h3>Blue Patriot Eagle HueForge</h3>
+        <p>Blue and white patriotic eagle.</p>
+        <div class="card-row">
+          <p class="price">$30+</p>
+          <a href="sms:2107075600?body=I%20want%20to%20order%3A%20Blue%20Patriot%20Eagle%20HueForge" class="btn small-btn">Text</a>
+        </div>
+      </div>
+    </div>
+    
+      </div>
+    </div>
+    
+    <div class="product-group">
+      <h3 class="group-title">Anime HueForge Designs</h3>
+      <div class="products">
+        
+    <div class="card">
+      <img class="product-img" src="images/image_07.jpg" alt="Anime Red Battle HueForge">
+      <div class="card-body">
+        <span class="tag">HueForge</span>
+        <h3>Anime Red Battle HueForge</h3>
+        <p>Bold anime-inspired wall art.</p>
+        <div class="card-row">
+          <p class="price">$35+</p>
+          <a href="sms:2107075600?body=I%20want%20to%20order%3A%20Anime%20Red%20Battle%20HueForge" class="btn small-btn">Text</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <img class="product-img" src="images/image_08.jpg" alt="Dragon Ball Sunset HueForge">
+      <div class="card-body">
+        <span class="tag">HueForge</span>
+        <h3>Dragon Ball Sunset HueForge</h3>
+        <p>Anime-inspired sunset piece.</p>
+        <div class="card-row">
+          <p class="price">$35+</p>
+          <a href="sms:2107075600?body=I%20want%20to%20order%3A%20Dragon%20Ball%20Sunset%20HueForge" class="btn small-btn">Text</a>
+        </div>
+      </div>
+    </div>
+    
+      </div>
+    </div>
+    
+    <div class="product-group">
+      <h3 class="group-title">Sports HueForge Designs</h3>
+      <div class="products">
+        
+    <div class="card">
+      <img class="product-img" src="images/image_09.jpg" alt="SEC Georgia Football HueForge">
+      <div class="card-body">
+        <span class="tag">HueForge</span>
+        <h3>SEC Georgia Football HueForge</h3>
+        <p>SEC / Georgia football theme.</p>
+        <div class="card-row">
+          <p class="price">$35+</p>
+          <a href="sms:2107075600?body=I%20want%20to%20order%3A%20SEC%20Georgia%20Football%20HueForge" class="btn small-btn">Text</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <img class="product-img" src="images/image_10.jpg" alt="Georgia Dawgs HueForge">
+      <div class="card-body">
+        <span class="tag">HueForge</span>
+        <h3>Georgia Dawgs HueForge</h3>
+        <p>Georgia Bulldogs themed wall art.</p>
+        <div class="card-row">
+          <p class="price">$35+</p>
+          <a href="sms:2107075600?body=I%20want%20to%20order%3A%20Georgia%20Dawgs%20HueForge" class="btn small-btn">Text</a>
+        </div>
+      </div>
+    </div>
+    
+      </div>
+    </div>
+    
+    <div class="product-group">
+      <h3 class="group-title">Other HueForge Designs</h3>
+      <div class="products">
+        
+    <div class="card">
+      <img class="product-img" src="images/image_11.jpg" alt="Mountain Soldier Sunset">
+      <div class="card-body">
+        <span class="tag">HueForge</span>
+        <h3>Mountain Soldier Sunset</h3>
+        <p>Purple/pink soldier silhouette.</p>
+        <div class="card-row">
+          <p class="price">$30+</p>
+          <a href="sms:2107075600?body=I%20want%20to%20order%3A%20Mountain%20Soldier%20Sunset" class="btn small-btn">Text</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <img class="product-img" src="images/image_12.jpg" alt="Marlin Sunset HueForge">
+      <div class="card-body">
+        <span class="tag">HueForge</span>
+        <h3>Marlin Sunset HueForge</h3>
+        <p>Vibrant marlin ocean sunset.</p>
+        <div class="card-row">
+          <p class="price">$35+</p>
+          <a href="sms:2107075600?body=I%20want%20to%20order%3A%20Marlin%20Sunset%20HueForge" class="btn small-btn">Text</a>
+        </div>
+      </div>
+    </div>
+    
+      </div>
+    </div>
+    
+</section>
+
+<section id="makerworld" class="qr">
+  <div class="section qr-grid">
+    <img class="qr-img" src="images/image_13.png" alt="ForgedByThaBeavster MakerWorld QR code">
+    <div>
+      <span class="tag">Free MakerWorld Files</span>
+      <h2>Print My Models For Free</h2>
+      <p class="section-sub">
+        Want to print it yourself? Scan the QR code or visit my MakerWorld profile to download available models for free.
+        Don’t have a printer or want me to handle it? Text me and I’ll print it for you.
+      </p>
+      <div class="button-row">
+        <a class="btn" href="https://makerworld.com/@ThaBeavster?appSharePlatform=copy" target="_blank" rel="noopener">Visit My MakerWorld Profile</a>
+        <a class="btn btn-dark" href="sms:2107075600?body=I%20saw%20your%20MakerWorld%20QR%20section%20and%20want%20you%20to%20print%20something%20for%20me.">Text Me To Print It</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="commercial" class="commercial">
+  <div class="section commercial-grid">
+    <img class="badge-img" src="images/image_14.png" alt="Commercial use authorized member badge">
+    <div>
+      <span class="tag">Authorized Commercial Use</span>
+      <h2>animuL67 Patreon Commercial Prints</h2>
+      <p class="section-sub">
+        I am subscribed as a commercial-use member so I can legally print and sell eligible models from animuL67.
+        Browse their MakerWorld profile, choose a model, and text me the name or link for a quote.
+      </p>
+      <p class="section-sub">
+        Available model types include <strong>Mini Football Helmets</strong>, <strong>Mini Baseball Helmets</strong>,
+        <strong>organizers</strong>, and the <strong>viral drink containers</strong> he created.
+      </p>
+      <div class="button-row">
+        <a class="btn" href="https://makerworld.com/en/@animuL67/upload" target="_blank" rel="noopener">Browse animuL67 Models</a>
+        <a class="btn btn-dark" href="sms:2107075600?body=I%20found%20a%20model%20on%20animuL67%27s%20MakerWorld%20profile%20that%20I%20would%20like%20you%20to%20print%20for%20me.">Text Me What You Want Printed</a>
+      </div>
+      <div class="helmet-showcase" aria-label="Mini football helmet examples">
+        <div class="helmet-copy">
+          <strong>Mini helmet examples</strong>
+          <span>Real prints so customers know exactly what these commercial Patreon models can look like.</span>
+        </div>
+        <div class="helmet-grid">
+        <img src="images/image_15.jpg" alt="Texas Longhorns mini football helmet printing">
+        <img src="images/image_16.jpg" alt="Georgia Bulldogs mini football helmet">
+        <img src="images/image_17.jpg" alt="Dallas Cowboys mini football helmet">
+        </div>
+      </div>
+      <div class="note">
+        Tip: Open the MakerWorld profile, copy the model link or model name, then send it by text so I can quote the print.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="custom" class="custom">
+  <div class="section">
+    <h2>Request a Custom Design</h2>
+    <p class="section-sub">Want a custom HueForge from your photo, logo, favorite team, military theme, or business idea? Text me the details.</p>
+    <a href="sms:2107075600?body=I%20want%20to%20request%20a%20custom%20HueForge%20design." class="btn">Text Custom Request</a>
+  </div>
+</section>
+
+<footer>© ForgedByThaBeavster • @ThaBeavster • Text Orders: (210) 707-5600</footer>
+
+<div class="float-cta" aria-label="Quick actions">
+  <a class="btn" href="https://makerworld.com/@ThaBeavster?appSharePlatform=copy" target="_blank" rel="noopener">Print Free</a>
+  <a class="btn btn-dark" href="sms:2107075600?body=I%20want%20to%20order%20or%20request%20a%20custom%20HueForge%20design.">Text Me</a>
+</div>
+<script>
+(function(){
+  const featured = document.getElementById('featured-grid');
+  const cards = Array.from(document.querySelectorAll('#hueforges .card')).slice(0,6);
+  if(featured && cards.length){
+    cards.forEach(function(card){
+      const clone = card.cloneNode(true);
+      const tag = clone.querySelector('.tag');
+      if(tag) tag.textContent = 'Featured Drop';
+      featured.appendChild(clone);
+    });
+  }
+  document.querySelectorAll('.card').forEach(function(card){
+    const title = card.querySelector('h3');
+    if(title && !card.getAttribute('aria-label')) card.setAttribute('aria-label', title.textContent.trim());
+  });
+})();
+</script>
+
+</body>
+</html>
